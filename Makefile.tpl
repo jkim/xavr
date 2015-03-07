@@ -41,6 +41,7 @@
 #include conf.mk
 # MCU name
 MCU = ___VARIABLE_MCU___
+AVRDUDE_MCU = m168
 
 
 # Processor frequency.
@@ -53,7 +54,7 @@ F_CPU = ___VARIABLE_F_CPU___
 AVRDUDE_PROGRAMMER = ___VARIABLE_PROGRAMMER___
 
 # com1 = serial port. Use lpt1 to connect to parallel port.
-AVRDUDE_PORT = /dev/cu.usbmodemfd121    # programmer connected to serial device
+#AVRDUDE_PORT = /dev/cu.usbmodemfd121    # programmer connected to serial device
 
 # Output format. (can be srec, ihex, binary)
 FORMAT = ihex
@@ -225,7 +226,7 @@ AVRDUDE_WRITE_FLASH = -U flash:w:$(OBJDIR)/$(TARGET).hex
 # to submit bug reports.
 #AVRDUDE_VERBOSE = -v -v
 
-AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER)
+AVRDUDE_FLAGS = -p $(AVRDUDE_MCU) -c $(AVRDUDE_PROGRAMMER)
 AVRDUDE_FLAGS += $(AVRDUDE_NO_VERIFY)
 AVRDUDE_FLAGS += $(AVRDUDE_VERBOSE)
 AVRDUDE_FLAGS += $(AVRDUDE_ERASE_COUNTER)

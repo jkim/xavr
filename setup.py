@@ -141,10 +141,10 @@ def main():
 	tools = ['avr-gcc', 'avr-objcopy', 'avr-objdump', 'avr-size', 'avr-nm', 'avrdude']
 	for tool in tools:
 		model[tool + '_loc'] = ensure_installed(tool)
-			
+
 	exec_template('Makefile.tpl', 'Makefile', model)
 
-	model = {'isystem': ' '.join(isystem()), 
+	model = {'isystem': ' '.join(isystem()),
 			 'mcus': supported_mcus(),
 			 'programmers': supported_programmers()
 			}
@@ -154,19 +154,23 @@ def main():
 		.format(len(model['mcus']), len(model['programmers'])))
 
 
-	DEST_DIR = os.path.join(os.path.expanduser('~'), 'Library/Developer/Xcode/Templates/Project Template/xavr/xavr.xctemplate/')
+	DEST_DIR = os.path.join(os.path.expanduser('~'), 'Library/Developer/Xcode/Templates/Project Template/xavr-make-avr-book/xavr.xctemplate/')
 	print('Installing template in: "{}"'.format(DEST_DIR))
 	mkdirs_p(DEST_DIR)
 	shutil.copy('main.c', DEST_DIR)
 	shutil.copy('Makefile', DEST_DIR)
+	shutil.copy('binaryMacro.h', DEST_DIR)
+	shutil.copy('macros.h', DEST_DIR)
+	shutil.copy('pinDefines.h', DEST_DIR)
+	shutil.copy('portpins.h', DEST_DIR)
+	shutil.copy('USART.c', DEST_DIR)
+	shutil.copy('USART.h', DEST_DIR)
 	shutil.copy('TemplateInfo.plist', DEST_DIR)
 	shutil.copy('TemplateIcon.icns', DEST_DIR)
 
 	os.remove('Makefile')
 	os.remove('TemplateInfo.plist')
 	print('Done. Hack away !\n')
-	
-	
 
 if __name__ == '__main__':
 	main()

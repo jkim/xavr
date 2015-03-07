@@ -32,6 +32,36 @@
 			<key>Path</key>
 			<string>main.c</string>
 		</dict>
+		<key>binaryMacro.h</key>
+		<dict>
+			<key>Path</key>
+			<string>binaryMacro.h</string>
+		</dict>
+		<key>macros.h</key>
+		<dict>
+			<key>Path</key>
+			<string>macros.h</string>
+		</dict>
+		<key>pinDefines.h</key>
+		<dict>
+			<key>Path</key>
+			<string>pinDefines.h</string>
+		</dict>
+		<key>portpins.h</key>
+		<dict>
+			<key>Path</key>
+			<string>portpins.h</string>
+		</dict>
+		<key>USART.c</key>
+		<dict>
+			<key>Path</key>
+			<string>USART.c</string>
+		</dict>
+		<key>USART.h</key>
+		<dict>
+			<key>Path</key>
+			<string>USART.h</string>
+		</dict>
 		<key>Makefile</key>
 		<dict>
 			<key>Path</key>
@@ -45,6 +75,12 @@
 	<key>Nodes</key>
 	<array>
 		<string>main.c</string>
+		<string>binaryMacro.h</string>
+		<string>macros.h</string>
+		<string>portpins.h</string>
+		<string>pinDefines.h</string>
+		<string>USART.h</string>
+		<string>USART.c</string>
 		<string>Makefile</string>
 	</array>
 	<key>Project</key>
